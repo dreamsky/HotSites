@@ -1,0 +1,27 @@
+﻿{
+    "manifest_version": 2,
+    "name": "前端资源网站",
+    "version": "1.0",
+
+    "description": "前端资源网站和博客的集合！各种前端素材，教程和资讯！",
+    "homepage_url": "http://www.jizhula.com",
+    "background": {"page": "background.html"},
+    "background_page": "background.html",
+    "options_page": "options.html",
+    "icons": {
+        "32": "icon-small.png",
+        "128": "icon.png"
+    },
+    "browser_action": {
+        "default_icon": "icon-small.png",
+        "default_title": "前端资源网站",
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [ {
+        "matches": [ "http://www.test.com/*" ],
+        "js": [ "js/jquery.js", "js/content.js"],
+	"all_frames": true,
+	"run_at":"document_end"
+    } ],
+    "permissions": [ "tabs", "contextMenus" ]
+}
